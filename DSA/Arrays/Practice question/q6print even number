@@ -1,3 +1,0 @@
-from numpy import *
-a=arange(2,21,2)
-print(a)

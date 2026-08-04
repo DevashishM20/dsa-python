@@ -1,3 +1,0 @@
-from numpy import *
-a=ones((2,2))
-print(a)
