@@ -1,0 +1,13 @@
+from array import *
+a=array('i',[1,1,1,0,0,1])
+num=1
+count=0
+maximum=0
+for x in a:
+    if x==num:
+        count+=1
+    else:
+            count=0
+    if count>maximum:
+        maximum=count
+print(maximum)
