@@ -1,0 +1,7 @@
+from array import *
+a=array('i',[1,22,333,4444,55555])
+count=0
+for x in a:
+    if len(str(x))%2==0:
+        count+=1
+print(count)
