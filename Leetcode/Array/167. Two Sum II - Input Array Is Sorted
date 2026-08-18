@@ -1,0 +1,13 @@
+from numpy import *
+a=array([2,7,11,15])
+target=9
+left=0
+right=len(a)-1
+while left<right:
+    if a[left]+a[right]==target:
+        break
+    elif a[left]+a[right]<target:
+        left+=1
+    else:
+        right-=1
+print(a[left],a[right])
