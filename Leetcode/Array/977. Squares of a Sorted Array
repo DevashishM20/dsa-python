@@ -1,0 +1,17 @@
+from numpy import *
+a=array([-4,-1,0,3,10])
+left=0
+right=len(a)-1
+b = [0] * len(a)
+position = len(a)-1
+while left<=right:
+    if abs(a[left])>abs(a[right]):
+        b[position] = a[left] * a[left]
+        left+=1
+    else:
+        b[position] = a[right] * a[right]
+        right-=1
+    position-=1
+print(b)
+    
+
