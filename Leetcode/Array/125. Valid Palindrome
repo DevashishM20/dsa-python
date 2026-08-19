@@ -1,0 +1,19 @@
+a="A man, a plan, a canal: Panama"
+a=a.lower()
+b=""
+flag=True
+for x in a:
+    if x.isalnum():
+        b+=x
+left=0
+right=len(b)-1
+while left<right:
+    if b[left]!=b[right]:
+        flag=False
+        break
+    left+=1
+    right-=1
+if flag:
+    print(True)
+else:
+    print(False)
