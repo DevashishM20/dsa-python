@@ -1,0 +1,18 @@
+a=[2,3,1,2,4,3]
+target=7
+i=0
+j=0
+total=0
+minimum=len(a)
+while j<len(a):
+    total+=a[j]
+    if total<target:
+        j+=1
+    elif total>=target:
+        while total>=target:
+            minimum=min(minimum,j-i+1)
+            
+            total-=a[i]
+            i+=1
+        j+=1
+print(minimum)
