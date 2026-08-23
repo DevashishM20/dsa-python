@@ -1,0 +1,14 @@
+a=list("abcabcbb")
+i=0
+j=0
+maximum=0
+b=[]
+while j<len(a):
+    if a[j] not in b:
+        b.append(a[j])
+        maximum=max(maximum,j-i+1)
+        j+=1
+    else:
+        b.remove(a[i])
+        i+=1
+print(maximum)
