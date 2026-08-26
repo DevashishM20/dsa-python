@@ -12,7 +12,7 @@ for i in range(len(a)-2):
     while left<right:
         total = a[i] + a[left] + a[right]
         if total==0:
-            b.append([a[i], a[left], a[right]])
+             
             left += 1
             right -= 1
         elif total<0:
