@@ -1,0 +1,68 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert_at_end(self, data):
+        new_node = Node(data)
+
+        if self.head is None:
+            self.head = new_node
+            return
+
+        temp = self.head
+
+        while temp.next is not None:
+            temp = temp.next
+
+        temp.next = new_node
+
+    def display(self):
+        temp = self.head
+
+        while temp is not None:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+
+        print("None")
+    def mergeTwoLists(self, list1, list2):
+        dummy=ListNode(0)
+        temp=dummy
+        p1=list1
+        p2=list2
+        while p1 != None and p2 !=None:
+            if p1.val <= p2.val:
+                temp.next=p1
+                p1=p1.next
+            else:
+                temp.next = p2
+                p2 = p2.next
+            temp=temp.next
+        if p1 != None:
+            temp.next=p1
+        else:
+            temp.next=p2
+        return dummy.next
+list1 = LinkedList()
+
+list1.insert_at_end(10)
+list1.insert_at_end(20)
+list1.insert_at_end(30)
+
+# Second linked list
+list2 = LinkedList()
+
+list2.insert_at_end(40)
+list2.insert_at_end(50)
+list2.insert_at_end(60)
+
+print("Linked List 1:")
+list1.display()
+
+print("Linked List 2:")
+list2.display()
