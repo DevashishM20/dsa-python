@@ -1,0 +1,8 @@
+s="anagram"
+t="nagaram"
+count={}
+for char in s:
+    if char(s)==reversed(char(t)):
+        print(True)
+    else:
+        print(False)
