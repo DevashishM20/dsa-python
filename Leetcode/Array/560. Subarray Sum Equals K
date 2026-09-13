@@ -1,0 +1,13 @@
+nums=[1,1,1]
+k=2
+count={0:1}
+answer=0
+prefix=[0]
+for x in nums:
+    prefix.append(prefix[-1]+x)
+    cs=prefix[-1]
+    needed=cs-k
+    if needed in count:
+        answer=answer+count[needed]
+    count[cs] = count.get(cs, 0) + 1
+print(answer)
