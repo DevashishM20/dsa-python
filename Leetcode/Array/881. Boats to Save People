@@ -1,0 +1,13 @@
+a=[3,2,2,1]
+target=3
+left=0
+right=len(a)-1
+boat=0
+while left<=right:
+    if a[left]+a[right]<=target:
+        left+=1
+    right-=1
+    boat+=1
+print(boat)
+
+   
