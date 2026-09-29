@@ -1,0 +1,14 @@
+s1="ab"
+s2="eidbaooo"
+freq=[0]*26
+freq1=[0]*26
+for ch in s1:
+    index=ord(ch)-ord('a')
+    freq[index]+=1
+for i in range(len(s1)):
+    index1=ord(s2[i])-ord('a')
+    freq1[index1]+=1
+if freq==freq1:
+    print(True)
+else:
+    print(False)
