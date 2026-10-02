@@ -1,5 +1,7 @@
 s1="ab"
 s2="eidbaooo"
+if len(s1) > len(s2):
+    print(False)
 freq=[0]*26
 freq1=[0]*26
 for ch in s1:
@@ -8,6 +10,13 @@ for ch in s1:
 for i in range(len(s1)):
     index1=ord(s2[i])-ord('a')
     freq1[index1]+=1
+if freq==freq1:
+    print(True)
+for i in range(len(s1),len(s2)):
+    remove = ord(s2[i-len(s1)])-ord('a')
+    freq1[remove]-=1
+    add=ord(s2[i])-ord('a')
+    freq1[add]+=1
 if freq==freq1:
     print(True)
 else:
