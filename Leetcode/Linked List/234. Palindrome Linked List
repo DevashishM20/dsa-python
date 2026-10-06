@@ -1,0 +1,50 @@
+class node:
+    def __init__(self,info,next=None):
+        self.info=info
+        self.next=next
+class  SingleLinkedList:
+    def __init__(self,head=None):
+        self.head=head
+    def insertAtEnd(self,value):
+        temp=node(value)
+        if(self.head != None):
+            t1=self.head
+            while t1.next != None:
+                t1=t1.next
+            t1.next=temp       
+        else:
+            self.head=temp
+    def Palindrome(self,head):
+        slow=head
+        fast=head
+        while fast!=None and fast.next!=None:
+            slow=slow.next
+            fast=fast.next.next
+        prev=None
+        current=slow
+        while current != None:
+            next_node = current.next
+            current.next = prev
+            prev = current
+            current = next_node
+        p1=head
+        p2=prev
+        while p2 != None:
+            if p1.val != p2.val:
+                return False
+            p1 = p1.next
+            p2 = p2.next
+        return True
+    def print(self):
+        t1=self.head
+        while t1 != None:
+            print(t1.info)
+            t1=t1.next
+a=SingleLinkedList()
+a.insertAtEnd(10)
+a.insertAtEnd(20)
+a.insertAtEnd(30)
+a.print()
+a.Reverse
+print("After Reverse")
+a.print()
