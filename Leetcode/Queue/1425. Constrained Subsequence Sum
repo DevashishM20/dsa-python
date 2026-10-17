@@ -1,0 +1,17 @@
+from collections import deque
+class Solution:
+    def constrainedSubsetSum(self,nums,k):
+        n = len(nums)
+        dp = [0]*n
+        q = deque()
+        answer=nums[0]
+        for i in range(n):
+            while q and q[0]<i-k:
+                q.popleft()
+            best=dp[q[0]] if q else 0
+            dp[i]=nums[i]+max(0,best)
+            answer=max(answer,dp[i])
+            while q and dp[q[-1]]<=dp[i]:
+                q.pop()
+            q.append(i)
+        return answer
