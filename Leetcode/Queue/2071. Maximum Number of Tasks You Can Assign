@@ -1,0 +1,32 @@
+from collections import deque
+class Solution:
+    def maxTaskAssign(self,tasks,workers,pills,strength):
+        tasks.sort()
+        workers.sort()
+        def canAssign(k):
+            q=deque()
+            i=0
+            remaining = pills
+            for w in workers[len(workers) - k:]:
+                while i<k and tasks[i]<=w+strength:
+                    q.append(tasks[i])
+                    i+=1
+                if not q:
+                    return False
+                if q[0]<=w:
+                    q.popleft()
+                else:
+                    if remaining==0:
+                        return False
+                    remaining-=1
+                    q.pop()
+            return True
+        low=0
+        high=min(len(tasks),len(workers))
+        while low<high:
+            mid=(low+high+1)//2
+            if canAssign(mid):
+                low=mid
+            else:
+                high=mid-1
+        return low
