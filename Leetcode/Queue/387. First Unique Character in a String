@@ -1,0 +1,9 @@
+class sol:
+    def firstUnique(self,s):
+        frequency={}
+        for ch in s:
+            frequency[ch]=frequency.get(ch,0)+1
+        for i in range(len(s)):
+            if frequency[s[i]]==1:
+                return i
+        return -1
