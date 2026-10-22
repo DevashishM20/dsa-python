@@ -1,0 +1,35 @@
+class stack:
+    def __init__(self):
+        self.s=[]
+    def lenght(self):
+        return len(self.s)
+    def push(self,value):
+        return self.s.append(0,value)
+    def pop(self):
+        if len(self.s)==0:
+            raise Exception("Stack is empty")
+        else:
+            return self.s.pop(0)
+    def LargestRec(self,heights):
+        stack = []
+        max_area = 0
+        for i in range(len(heights)):
+            while stack and heights[i] < heights[stack[-1]]:
+                h = heights[stack.pop()]
+                if stack:
+                    width = i - stack[-1] - 1
+                else:
+                    width = i
+                max_area = max(max_area, h * width)
+            stack.append(i)
+        n = len(heights)
+        while stack:
+            h = heights[stack.pop()]
+            if stack:
+                width = n - stack[-1] - 1
+            else:
+                width = n
+            max_area = max(max_area, h * width)
+        return max_area
+        
+    
