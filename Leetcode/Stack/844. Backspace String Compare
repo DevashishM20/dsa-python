@@ -1,0 +1,34 @@
+class stack:
+    def __init__(self):
+        self.s=[]
+    def lenght(self):
+        return len(self.s)
+    def push(self,value):
+        self.s.insert(0,value)
+    def pop(self):
+        if len(self.s)==0:
+            raise Exception("Stack is empty")
+        else:
+            return self.s.pop(0)
+    def peek(self):
+        if len(self.s)==0:
+            raise Exception("stack is empty")
+        else:
+            raise self.s[0]
+    def Backspace(self,s,t):
+        stack1=[]
+        stack2=[]
+        for chr in s:
+            if chr=="#":
+                stack1.pop()
+            else:
+                stack1.append(chr)
+
+        for chr in t:
+            if chr=="#":
+                stack2.pop()
+            else:
+                stack2.append(chr)
+        return stack1==stack2
+a=stack()
+a.push
