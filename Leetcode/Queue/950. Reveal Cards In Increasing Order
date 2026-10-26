@@ -1,0 +1,14 @@
+from collections import deque
+class queue:
+    def __init__(self):
+        self.q=[]
+    def deckRevealedIncreasing(self, deck):
+        deck.sort()
+        q=deque(range(deck))
+        result=[0]* len(deck)
+        for card in deck:
+            index=q.popleft()
+            result[index]=card
+            if q:
+                q.append(q.popleft())
+        return result
